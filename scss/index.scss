@@ -1,0 +1,132 @@
+@import "./helpers/fonts";
+@import "./helpers/mixins";
+@import "./helpers/variables";
+@import "./helpers/functions";
+
+@import "./components/header";
+
+@import "./sections/hero";
+@import "./sections/about";
+@import "./sections/service";
+@import "./sections/catalog";
+@import "./sections/location";
+@import "./sections/social";
+
+@import "./components/footer";
+
+body {
+    margin: 0;
+    font-family: "SF Pro Display";
+    background: $bg-body;
+}
+a {
+    text-decoration: none;
+}
+ul,
+h1,
+h2,
+p,
+div,
+span {
+    padding: 0;
+    margin: 0;
+}
+.container {
+    max-width: vw(1110);
+    margin: 0 auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.bg-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    @include font(vw(200), 800, vw(220));
+    z-index: -1;
+    color: #002881;
+    opacity: 0.03;
+}
+
+.pink-btn {
+    @include font(vw(12), 800, vh(20));
+    padding: vh(5) vh(17);
+    background: $link-background;
+    border-radius: vh(30);
+    color: $link-text;
+    text-decoration: none;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+}
+.title {
+    @include font(vw(36), 400, vh(60));
+    position: relative;
+    margin: vw(65) 0 vw(65);
+    color: $text-GrayBlue50;
+    &__bg-text {
+        @include font(vw(200), 800, vw(220));
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        color: #002881;
+        opacity: 0.03;
+    }
+}
+
+.text {
+    display: inline-block;
+    width: vw(640);
+    @include font(vw(14), 600, vw(30));
+    padding-bottom: vw(70);
+    color: $text-GrayBlue70;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.badge {
+    @include font(vw(12), 800, vw(20));
+    border: none;
+    outline: none;
+    border-radius: vw(30);
+    padding: vw(5) vw(12);
+    &_orange {
+        color: $text-orange;
+        background-color: $bg-light-orange;
+    }
+    &_pink {
+        background: $link-background;
+        color: $link-text;
+    }
+}
+
+
+hr {
+    margin: 0;
+    border-color: #EDEFF2;
+}
+
+@media screen and (max-width:1024px) {
+    .col-3,.col-4,.col-6 {
+        width: 100%;
+    }
+    .container {
+        max-width: 100%;
+        padding: 0 vmin;
+    }
+}
